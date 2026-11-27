@@ -27,11 +27,6 @@ const focus = [
   ["Handicraft Support", "Providing computer education / telephone booths for handicraft persons."],
 ];
 
-const cases = [
-  ["Medical Help Request", "Mr. Jitendra Vishwas Shinde (Mother – Mrs. Alka Vishwas Shinde)"],
-  ["Educational Help Request", "Tarannoum Sayyed"],
-  ["Educational Help Request", "Panalal Yadhav for daughter Aarti Yadhav (Jr. KG Student of Vinay High School)"],
-];
 
 function Gallery({ items }: { items: string[] }) {
   return (
@@ -68,7 +63,7 @@ function About() {
         <h1 className="mt-6 text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-primary md:text-[52px]">
           A guardian’s purpose,<br />rooted in Chembur.
         </h1>
-        <p className="mt-6 max-w-[720px] text-[17px] leading-relaxed text-muted-foreground">
+        <p className="mt-6 text-[17px] leading-relaxed text-muted-foreground">
           AAI CARETAKER is located in the Central Suburbs of Mumbai – Chembur, on the Eastern part of Mumbai, situated 22 km North East of Churchgate. The NGO is registered under the Societies Registration Act 1860 and registered under the Bombay Public Trust Act 1950.
         </p>
       </section>
@@ -94,37 +89,6 @@ function About() {
             ))}
           </div>
         </section>
-
-        <Section tag="22 April 2010" title="AAI CARETAKER Celebrates 1st Anniversary">
-          <div className="mt-6 max-w-[760px] space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-            <p>On 22nd April 2010, AAI CARETAKER completed an eventful first year. On this day in 2009, AAI CARETAKER was born and registered under the Societies Registration Act 1860.</p>
-            <p>We thank all our Trustees, Members, Networking Partners, Well Wishers, and seniors without whom it would not have been possible to elevate to this height. We are proud of our journey and impact for the welfare of society, and we look forward to continuing our mission for years to come.</p>
-          </div>
-          <Gallery items={["Letter of thanks", "HEDA letter", "Certificate, Indore", "Reliance community partner", "UL recognition", "With partners"]} />
-        </Section>
-
-        <Section tag="11 February 2014" title="Reliance Employee Volunteering Day">
-          <p className="mt-6 max-w-[760px] text-[15px] leading-relaxed text-muted-foreground">On Tuesday, February 11, 2014, Reliance Companies celebrated Employee Volunteering Day at Hermitage, Dhirubhai Ambani Knowledge City. On that occasion, Reliance cherished AAI CARETAKER (NGO) as a community partner.</p>
-          <Gallery items={["Safer Roads Safer India certificate"]} />
-        </Section>
-
-        <Section tag="3 September 2015" title="Safer Road Safer India Initiative">
-          <p className="mt-6 max-w-[760px] text-[15px] leading-relaxed text-muted-foreground">Thanks to Mr. Scott Ganske, Miss Deepa Shanker &amp; Mr. Vinki Sir for conducting the Safer Road Safer India classroom session on 3rd Sept 2015. We are proud to join this initiative representing AAI CARETAKER (NGO), Chembur, Mumbai.</p>
-          <Gallery items={["Letter"]} />
-        </Section>
-
-        <Section tag="Case studies" title="Medical & Educational Help Case Studies">
-          <p className="mt-6 max-w-[760px] text-[15px] leading-relaxed text-muted-foreground">AAI CARETAKER actively responds to direct appeals and request letters from families in need of urgent medical treatment and educational support:</p>
-          <ul className="mt-6 grid gap-3 md:grid-cols-3">
-            {cases.map(([t, n]) => (
-              <li key={n} className="rounded-md bg-sage p-5">
-                <div className={`${eyebrow} text-primary`}>{t}</div>
-                <div className="mt-2 text-[14px] leading-relaxed text-foreground">{n}</div>
-              </li>
-            ))}
-          </ul>
-          <Gallery items={["Request letter", "Scholarship request", "Neuro Foundation letter", "Scholarship application", "GYSD Community Partner"]} />
-        </Section>
 
       </div>
 

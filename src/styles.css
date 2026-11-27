@@ -166,3 +166,21 @@
     font-family: var(--font-display);
   }
 }
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(-0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-right {
+  animation: marquee-left 35s linear infinite;
+}
+
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}

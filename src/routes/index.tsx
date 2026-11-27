@@ -33,6 +33,29 @@ const ideas = [
   { tag: "Health", title: "A cancer-centre support proposal", text: "The proposal lists Cancer Centre (Food & Accommodation Free for Patients)." },
 ];
 
+function Gallery({ items }: { items: string[] }) {
+  return (
+    <div className="overflow-hidden py-3">
+      <div className="flex w-max animate-marquee-right gap-5">
+        {[...items, ...items].map((label, index) => (
+          <figure
+            key={`${label}-${index}`}
+            className="w-[350px] shrink-0 rounded-md border border-border bg-card p-3"
+          >
+            <div className="flex aspect-[4/3] items-center justify-center rounded-[3px] bg-secondary px-4 text-center text-[13px] text-muted-foreground">
+              Photo to come
+            </div>
+
+            <figcaption className="mt-3 text-[13px] text-muted-foreground">
+              {label}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   const [agree, setAgree] = useState(false);
   return (
@@ -49,8 +72,7 @@ function Index() {
             AAI Caretaker is a community non-profit in Mumbai, protecting and promoting education, environment and health since 2009.
           </p>
           <div className="mt-6 flex gap-2.5">
-            <a href="#" className={btnPrimary}>Donate</a>
-            <a href="#" className={btnOutline}>Get involved →</a>
+            <a href="/donate" className={btnPrimary}>Donate</a>
           </div>
           <p className="mt-7 text-[13px] text-foreground">A mother’s care. A guardian’s purpose.</p>
         </div>
@@ -60,14 +82,22 @@ function Index() {
         </figure>
       </section>
 
-      <section className="bg-sage">
-        <div className={`${wrap} grid gap-8 py-10 sm:grid-cols-3`}>
-          {[["Since 2009", "Established in Mumbai"], ["3 focus areas", "Education, environment, health"], ["Chembur, Mumbai", "Rooted in the community"]].map(([a, b]) => (
+     <section className="bg-sage">
+        <div className={`${wrap} grid gap-8 py-5 sm:grid-cols-3`}>
+          {[["Since 2009", "Established in Mumbai"], ["Multiple focus areas", "Education, environment, health"], ["Chembur, Mumbai", "Rooted in the community"]].map(([a, b]) => (
             <div key={a}>
               <div className="font-display text-2xl font-semibold text-primary">{a}</div>
               <div className="mt-2 text-[13px] text-muted-foreground">{b}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-forest text-primary-foreground">
+        <div className="py-3">
+          <Gallery
+            items={["Pic 1", "Pic 2", "Pic 3", "Pic 4", "Pic 5", "Pic 6"]}
+          />
         </div>
       </section>
 
@@ -98,7 +128,7 @@ function Index() {
           </figure>
           <div className="pt-5">
             <p className={`${eyebrow} text-gold`}>The story behind our name</p>
-            <h2 className="mt-5 text-4xl font-semibold leading-[1.2]">Care begins<br />close to home.</h2>
+            <h2 className="mt-5 text-4xl font-semibold leading-[1.2]">Care begins<br />Close to home.</h2>
             <p className="mt-6 text-[15px] leading-relaxed text-primary-foreground/85">
               AAI is Marathi for ‘Mother’. Caretaker means ‘Guardian’. Together, they capture the spirit of a mother caring for the universe.
             </p>

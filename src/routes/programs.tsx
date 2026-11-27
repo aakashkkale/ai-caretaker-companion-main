@@ -16,7 +16,7 @@ export const Route = createFileRoute("/programs")({
 const programs = [
   {
     tag: "CSR Partnership & Green Energy",
-    title: "1) Free Solar Project to School, College & Hospital under CSR Activities",
+    title: "Free Solar Project to School, College & Hospital under CSR Activities",
     lead: <>AAI Caretaker NGO is launching a major renewable energy initiative to install 5KW Solar Panel Systems (and higher capacity units) at Vinay High School (MMRDA Colony, Chembur, Mumbai), Zilla Parishad schools in Nashik, local colleges, and community hospitals under Corporate Social Responsibility (CSR).</>,
     listTitle: "Key Objectives & Community Impact:",
     items: [
@@ -30,7 +30,7 @@ const programs = [
   },
   {
     tag: "Healthcare Relief & Social Welfare",
-    title: "2) Cancer Centre (Food & Accommodation Free)",
+    title: "Cancer Centre (Food & Accommodation Free)",
     lead: <>To support cancer patients and their families traveling from rural and impoverished areas to Mumbai for critical oncology treatment, AAI Caretaker NGO is establishing a dedicated <strong>Cancer Care Support Center</strong> providing <strong>100% free food and accommodation</strong>.</>,
     listTitle: "Key Services & Facilities:",
     items: [
@@ -43,19 +43,56 @@ const programs = [
   },
 ];
 
+const projects = [
+  {
+    tag: "Environmental",
+    title: "Saaf Aangan Project",
+    lead: <>Aangan means the space in front of your residence, shop, or workplace (from the boundary, if any) to the centre of the road including the footpath (if any).To avail the scheme, send a written application describing the location of the area and how you plan to maintain it. 
+            For instance, keeping flower pots and flower beds, provided they do not obstruct vehicular traffic.
+            The trees in the area must be painted in three bands: white, brown, white (in that order).</>,
+    listTitle: "Key Points of Saaf Aangan:",
+    items: [
+      [,"Implementation of Saaf Aangan does not require any money to be spent."],
+      [,"Implementation of Saaf Aangan does not violate any constitutional or legal rights."],
+      [,"Saaf Aangan can even be implemented in declared hawking zones, where hawkers do not object."],
+      [,"If encroachers or hawkers ask, citizens who try to keep the footpath clean can explain the initiative and its benefits."],
+      [,"Madhu Savant believes that Saaf Aangan is the only way to keep the city clean and green."],
+    ],
+  },
+    {
+    tag: "Education",
+    title: "Computer Education Center Project",
+    lead: <>On the eve of Dasera on 17th Sept 2010, our NGO started its First Computer Education Center at Ashok Nagar, Vasinaka, Chembur, Mumbai - 400 074 in association with Yash Computer Education for CCIT Course - [Certificate Course In Computer Information Technology] for two months duration @ Rs 350/- only & Hardware & Networking Course for 1.5 months @ Rs. 2500/- only for the mass. 
+    Our main aim is to provide technical knowledge for the mass.</>,
+    listTitle: "Our computer education center project was a great success with the help of the following promoters & supporters:",
+    items: [
+      [,"Mr. Kisan sir"],
+      [,"Mrs. D'Souza madam"],
+      [,"Mr. Shrikant Mishra"],
+      [,"Mr. Sanjeev (Proprietor of M/s. S R Steel & Pipes)"],
+      [,"Mr. PawanKumar Agarwal"],
+      [,"Mr. Mangesh Bhaurao Bodade"],
+      [,"Mr. Natarajan Balasubramanian"],
+      [,"Mr. Uttam Agarwal"],
+      [,"Trustees and members"],
+    ],
+  },
+];
+
 function Programs() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
       <section className={`${wrap} py-16 md:py-[70px]`}>
-        <h1 className="mt-6 text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-primary md:text-[52px]">Programs </h1>
+        <p className={`${eyebrow} text-primary`}>PROGRAMS AND PROJECTS</p>
+        <h1 className="mt-6 text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-primary md:text-[52px]">Programs.</h1>
         <p className="mt-6 max-w-[720px] text-[17px] leading-relaxed text-muted-foreground">
           Key upcoming social welfare initiatives and CSR partnerships by AAI Caretaker NGO.
         </p>
       </section>
 
-      <div className={`${wrap} space-y-8 pb-20`}>
+      <div className={`${wrap} space-y-8 pb-5`}>
         {programs.map((p) => (
           <article key={p.title} className="rounded-md border border-border border-l-4 border-l-gold bg-card p-7 md:p-10">
             <span className={`${eyebrow} inline-block rounded-full bg-sage px-3 py-1 text-[12px] text-primary`}>{p.tag}</span>
@@ -70,6 +107,31 @@ function Programs() {
               ))}
             </ul>
             <a href="#" className="mt-8 inline-flex items-center rounded-[3px] bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">{p.cta}</a>
+          </article>
+        ))}
+      </div>
+
+      <section className={`${wrap} py-16 md:py-[50px]`}>
+        <h1 className=" text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-primary md:text-[52px]">Projects.</h1>
+        <p className="mt-6 max-w-[720px] text-[17px] leading-relaxed text-muted-foreground">
+          Projects carried out by AAI Caretaker NGO.
+        </p>
+      </section>
+
+      <div className={`${wrap} space-y-8 pb-20`}>
+        {projects.map((p) => (
+          <article key={p.title} className="rounded-md border border-border border-l-4 border-l-gold bg-card p-7 md:p-10">
+            <span className={`${eyebrow} inline-block rounded-full bg-sage px-3 py-1 text-[12px] text-primary`}>{p.tag}</span>
+            <h2 className="mt-5 text-2xl font-semibold leading-[1.25] text-primary md:text-[28px]">{p.title}</h2>
+            <p className="mt-5 text-[16px] font-medium leading-relaxed text-foreground">{p.lead}</p>
+            <h3 className="mt-7 text-[16px] font-semibold text-foreground">{p.listTitle}</h3>
+            <ul className="mt-4 space-y-3 pl-4">
+              {p.items.map(([k, v]) => (
+                <li key={k} className="border-l-2 border-sage pl-4 text-[14px] leading-relaxed text-muted-foreground">
+                  <span className="font-semibold text-foreground">{k}</span> {v}
+                </li>
+              ))}
+            </ul>
           </article>
         ))}
       </div>

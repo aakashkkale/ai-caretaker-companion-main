@@ -96,11 +96,11 @@ function Contact() {
       <SiteHeader />
 
       <section className={`${wrap} py-16 md:py-[70px]`}>
-        <p className={`${eyebrow} text-primary`}>Contact us &amp; appeal</p>
+        <p className={`${eyebrow} text-primary`}>Contact us</p>
         <h1 className="mt-6 text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-primary md:text-[52px]">
-          Contact us &amp; appeal
+          Contact us &amp; appeal.
         </h1>
-        <p className="mt-6 max-w-[720px] text-[17px] leading-relaxed text-muted-foreground">
+        <p className="mt-6  text-[17px] leading-relaxed text-muted-foreground">
           Write to us, call us, or support our work directly. Every contribution helps AAI CARETAKER
           keep its services going without compromise.
         </p>
@@ -109,7 +109,7 @@ function Contact() {
       <div className={wrap}>
         <section className="border-t border-border py-14">
           <SectionTitle>Appeal for Support</SectionTitle>
-          <div className="mt-6 max-w-[820px] space-y-5 text-[15px] leading-relaxed text-muted-foreground">
+          <div className="mt-6  space-y-5 text-[15px] leading-relaxed text-muted-foreground">
             <p>
               The AAI CARETAKER is committed to continuing its work with dedication and ever-greater
               efficiency, refusing to allow resource constraints to dampen its spirits. However, it
@@ -127,48 +127,8 @@ function Contact() {
         </section>
 
         <section className="border-t border-border py-14">
-          <SectionTitle>Bank Account Details for Donations</SectionTitle>
-          <DetailCard>
-            <h3 className="text-lg font-semibold text-primary">
-              THE MUMBAI DISTRICT CENTRAL CO-OP BANK LTD
-            </h3>
-            <div className="mt-5">
-              <Details rows={bank} />
-            </div>
-
-            <div className="mt-7 border-t border-border pt-6">
-              <p className="text-[14px] font-semibold text-primary">
-                Scan to Pay via UPI (BHIM / GPay / PhonePe / Paytm)
-              </p>
-              <ImagePlaceholder
-                label="UPI QR code"
-                hint="QR code image to come — send the photo of the UPI card and it will be placed here."
-              />
-              <p className="mt-6 text-[14px]">
-                <span className="font-semibold text-foreground">UPI ID: </span>
-                <span className="rounded-[3px] bg-sage px-2 py-1 font-medium text-primary">
-                  aaicaretaker27@mdcb
-                </span>
-              </p>
-            </div>
-          </DetailCard>
-        </section>
-
-        <section className="border-t border-border py-14">
-          <SectionTitle>PAN &amp; Tax Registration Details</SectionTitle>
-          <DetailCard>
-            <Details rows={tax} />
-          </DetailCard>
-          <p className="mt-8 text-[14px] font-semibold text-primary">PAN Card Copy</p>
-          <ImagePlaceholder
-            label="PAN card copy"
-            hint="PAN card image to come — send the scanned PAN card and it will be placed here."
-          />
-        </section>
-
-        <section className="border-t border-border py-14">
           <SectionTitle>Epilogue</SectionTitle>
-          <p className="mt-6 max-w-[820px] text-[15px] leading-relaxed text-muted-foreground">
+          <p className="mt-6  text-[15px] leading-relaxed text-muted-foreground">
             AAI CARETAKER gratefully acknowledges the help received from all segments of society.
             The help has been in the form of economic support, technical assistance, and advice from
             its numerous well-wishers and patrons. The goodwill which AAI CARETAKER has generated
