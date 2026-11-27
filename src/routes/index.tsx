@@ -5,6 +5,7 @@ import education from "@/assets/education.jpg";
 import environment from "@/assets/environment.jpg";
 import health from "@/assets/health.jpg";
 import lane from "@/assets/lane.jpg";
+import { SiteHeader, SiteFooter, wrap, eyebrow, btnPrimary, btnOutline } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,13 +21,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const nav = ["Home", "About Us", "Programs", "Impact / Stories", "Get Involved", "Contact"];
-const wrap = "mx-auto w-full max-w-[1030px] px-6";
-const eyebrow = "text-[13px] font-semibold uppercase tracking-[0.08em]";
-const btnPrimary =
-  "inline-flex items-center rounded-[3px] bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90";
-const btnOutline =
-  "inline-flex items-center rounded-[3px] border border-primary bg-card px-4 py-2.5 text-sm font-semibold text-primary hover:bg-secondary";
 
 const areas = [
   { title: "Education", img: education, text: "Making education a shared priority. A founding focus of the trust’s work.", link: "Explore education" },
@@ -43,22 +37,7 @@ function Index() {
   const [agree, setAgree] = useState(false);
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b border-border">
-        <div className={`${wrap} flex flex-wrap items-center justify-between gap-4 py-5`}>
-          <a href="#" className="leading-tight">
-            <div className="font-display text-[17px] font-semibold text-primary">AAI CARETAKER</div>
-            <div className="text-[13px] tracking-wide text-muted-foreground">TRUST · EST. 2009</div>
-          </a>
-          <nav className="flex flex-wrap items-center gap-5 text-[14px]">
-            {nav.map((n, i) => (
-              <a key={n} href="#" className={i === 0 ? "font-semibold text-primary underline underline-offset-4" : "text-foreground/80 hover:text-primary"}>
-                {n}
-              </a>
-            ))}
-            <a href="#" className={btnPrimary}>Donate</a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className={`${wrap} grid items-start gap-12 py-16 md:grid-cols-2 md:py-[70px]`}>
         <div className="pt-6">
@@ -76,7 +55,7 @@ function Index() {
           <p className="mt-7 text-[13px] text-foreground">A mother’s care. A guardian’s purpose.</p>
         </div>
         <figure>
-          <img src={hero} alt="Three women talking at a table in a Chembur courtyard" className="aspect-[495/463] w-full rounded-md object-cover" />
+          <img src={hero} alt="Three women talking at a table in a Chembur courtyard" className="aspect-[95/63] w-full rounded-md object-cover" />
           <figcaption className="mt-4 text-[13px] text-muted-foreground">The spirit of care, shared. Illustrative photograph.</figcaption>
         </figure>
       </section>
@@ -142,6 +121,9 @@ function Index() {
           ))}
         </div>
         <a href="#" className="mt-9 inline-block text-[13px] font-semibold text-primary">Explore stories and project information →</a>
+        <div className="mt-5 rounded-md border-l-4 border-gold bg-secondary px-6 py-5 text-[14px] leading-relaxed text-foreground">
+          <span className="font-semibold">Official Website Notice:</span> Our official web site is www.aaicaretaker.in. (Please note that the previous website www.aaicaretaker.org.in is no longer active).
+        </div>
       </section>
 
       <section className="bg-forest text-primary-foreground">
@@ -166,36 +148,7 @@ function Index() {
         </div>
       </section>
 
-      <footer className="bg-sage">
-        <div className={`${wrap} py-14 text-[13px] leading-relaxed text-foreground/85`}>
-          <div className="grid gap-10 md:grid-cols-3">
-            <div className="space-y-3">
-              <div className="font-display text-lg font-medium text-primary">AAI CARETAKER TRUST</div>
-              <p>Protecting and promoting education, environment and health. Chembur, Mumbai. Established 2009.</p>
-              <p>Room No. B/4, Ashok Nagar, Near Reliance Substation, Vasinaka, Chembur, Mumbai - 400 074, Maharashtra, India.</p>
-              <p>aaicaretaker.in</p>
-            </div>
-            <div>
-              <div className="font-display text-base font-medium text-primary">Explore</div>
-              <ul className="mt-2 space-y-1.5">
-                {["Home", "About Us", "Programs / What We Do", "Impact / Stories", "Get Involved (Volunteer)", "Donate", "Contact"].map((l) => (
-                  <li key={l}><a href="#" className="hover:text-primary">{l}</a></li>
-                ))}
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <div className="font-display text-base font-medium text-primary">Let’s connect</div>
-              <p>aaicaretaker@gmail.com<br />+91 022 2553 0537<br />+91 9821 624480</p>
-              <p>Facebook · Twitter<br />Current handles to confirm.</p>
-              <p>Patron: Anam Enterprises</p>
-            </div>
-          </div>
-          <div className="mt-10 space-y-8 border-t border-border pt-8">
-            <p>Historical registration as shown: Reg. No. F 38629 &amp; Reg. No. MAH/Mum/855/09 GBBSD | 80G &amp; 12AA Reg No. 42990. Current registration and tax status must be verified; no current tax deduction eligibility is asserted.</p>
-            <p>Representative photography is illustrative, not documentation of AAI beneficiaries or events. Contact details to be reconfirmed before launch.</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
